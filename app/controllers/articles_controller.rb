@@ -66,7 +66,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @article.user
+      if current_user != @article.user && !current_user.admin?
         #current_user exist because require_user before action above already ensures that there is a current_user
         #@artcile exsit because the before action that defines @article comes before this before action
         flash[:danger] = "You can only edit or delete your own articles"
