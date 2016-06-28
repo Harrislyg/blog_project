@@ -29,13 +29,21 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-
+gem 'rails-controller-testing'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "rspec-rails", "3.5.0.beta4"
+end
+
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :development do
